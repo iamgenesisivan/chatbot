@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: .
+    working_dir: '/app'
+    ports:
+      - 80:80
+    command: php -S 0.0.0.0:80 -t public
+    volumes:
+      - '.:/app:z'
+volumes:
+  rabbitmq_data:
